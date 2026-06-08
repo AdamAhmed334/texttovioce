@@ -1,9 +1,9 @@
 import streamlit as st
 import edge_tts
 import asyncio
-st.title("textovoice")
+st.title("app_sound")
 text = st.text_area("اكتب النص")
-lang = st.selectbox("choose language",["عربي","إنجليزي"])
+lang = st.selectbox("choose a lang",["انجلزي","عربي"])
 VOICES = {
     "عربي": {
         
@@ -18,4 +18,17 @@ VOICES = {
         " ليبي (امرأة - بريطانيا)": "en-GB-LibbyNeural",
     },
 }
-lang = st.selectbox("choose lang voice",list(VOICES[lang].keys()))
+voice_label = st.selectbox(choose Voice,list(VOICES[lang].key()))
+voice_chat = VOICES[lang][voice_label]
+async def genaret_audio(text,voice):
+    communicate = edge_tts.communicate(text= text,voice= voice)
+    audio_chunk = []
+     async for chunk in communicate.stream():
+         if chunk ["type"]=="audio":
+             audio_chunk.append(chunk["date"])
+        return b"".join(audio_chunk)
+      if st.button("Play"):
+          if text:
+            audio_bytes = asyncio.run(generate_audio)
+             
+    
