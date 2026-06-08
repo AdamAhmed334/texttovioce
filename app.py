@@ -26,7 +26,7 @@ async def genaret_audio(text,voice):
     async for chunk in communicate.stream():
          if chunk ["type"]=="audio":
              audio_chunk.append(chunk["date"])
-        return b"".join(audio_chunk)
+         return b"".join(audio_chunk)
       if st.button("Play"):
           if text:
             audio_bytes = asyncio.run(generate_audio)
