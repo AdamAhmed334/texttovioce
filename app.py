@@ -30,7 +30,7 @@ async def genaret_audio(text,voice):
          if st.button("Play"):
           if text:
             audio_bytes = asyncio.run(generate_audio(text,voice_id))
-              st.audio(audio_bytes, format="audio/mp3")
+            st.audio(audio_bytes, format="audio/mp3")
           else:
               st.warning("اكتب كلام اكتر")
              
