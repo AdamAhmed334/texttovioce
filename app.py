@@ -23,7 +23,7 @@ voice_chat = VOICES[lang][voice_label]
 async def genaret_audio(text,voice):
     communicate = edge_tts.communicate(text= text,voice= voice)
     audio_chunk = []
-     async for chunk in communicate.stream():
+    async for chunk in communicate.stream():
          if chunk ["type"]=="audio":
              audio_chunk.append(chunk["date"])
         return b"".join(audio_chunk)
