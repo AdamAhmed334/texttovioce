@@ -18,7 +18,7 @@ VOICES = {
         " ليبي (امرأة - بريطانيا)": "en-GB-LibbyNeural",
     },
 }
-voice_label = st.selectbox("Choose Voice", list(VOICES[lang].keys()))
+voice_label = st.selectbox("Choose Voice",list(VOICES[lang].keys()))
 voice_id = VOICES[lang][voice_label]  
 async def genaret_audio(text,voice):
     communicate = edge_tts.communicate(text= text,voice= voice)
