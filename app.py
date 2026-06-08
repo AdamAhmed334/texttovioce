@@ -3,7 +3,7 @@ import edge_tts
 import asyncio
 st.title("app_sound")
 text = st.text_area("اكتب النص")
-lang = st.selectbox("choose a lang",["عربي","اإنجليزي"]
+lang = st.selectbox("choose a lang",["عربي","اإنجليزي"])
 VOICES = {
     "عربي": {
         
