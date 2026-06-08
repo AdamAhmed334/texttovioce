@@ -21,7 +21,7 @@ VOICES = {
 voice_label = st.selectbox("Choose Voice",list(VOICES[lang].keys()))
 voice_id = VOICES[lang][voice_label]  
 async def genaret_audio(text,voice):
-    communicate = edge_tts.communicate(text= text,voice= voice)
+    Communicate = edge_tts.Communicate(text= text,voice= voice)
     audio_chunk = []
     async for chunk in communicate.stream():
          if chunk ["type"]=="audio":
