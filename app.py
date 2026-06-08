@@ -24,8 +24,8 @@ async def generete_audio(text,voice):
     Communicate = edge_tts.Communicate(text= text,voice= voice)
     audio_chunk = []
     async for chunk in Communicate.stream():
-         if chunk ["type"]=="audio":
-             audio_chunk.append(chunk["date"])
+         if chunk["type"]=="audio":
+             audio_chunk.append(chunk["data"])
          return b"".join(audio_chunk)
 if st.button("Play"):
     if text:
